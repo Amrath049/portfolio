@@ -6,7 +6,7 @@ export default function Contact({ showBackButton = false }: { showBackButton?: b
     <section className="py-16 sm:py-20 md:py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {showBackButton && (
-          <Link 
+          <Link
             to="/"
             className="inline-flex items-center gap-2 text-neutral-600 hover:text-neutral-900 transition-colors mb-8 text-sm sm:text-base"
           >
@@ -14,7 +14,7 @@ export default function Contact({ showBackButton = false }: { showBackButton?: b
             Back to Home
           </Link>
         )}
-        
+
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-neutral-900 mb-4 tracking-tight">
             Get In Touch
@@ -47,7 +47,7 @@ export default function Contact({ showBackButton = false }: { showBackButton?: b
               </p>
               <div className="flex gap-4 justify-center sm:justify-start">
                 <a
-                  href="https://github.com/amrathprasad"
+                  href="https://github.com/Amrath049"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-xl bg-white border border-neutral-200 flex items-center justify-center hover:border-neutral-300 hover:bg-neutral-900 hover:text-white transition-all group"
@@ -55,7 +55,7 @@ export default function Contact({ showBackButton = false }: { showBackButton?: b
                   <Github className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://linkedin.com/in/amrathprasad"
+                  href="www.linkedin.com/in/amrath-prasad-99234a209"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-xl bg-white border border-neutral-200 flex items-center justify-center hover:border-neutral-300 hover:bg-neutral-900 hover:text-white transition-all group"

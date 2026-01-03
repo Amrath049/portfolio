@@ -18,10 +18,10 @@ export default function LandingPage() {
       <Skills />
       <Certificates />
       <Contact />
-      
+
       <footer className="bg-neutral-900 text-white py-6 sm:py-8">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
-          <p className="text-neutral-400 text-sm sm:text-base">© 2025 Amrath Prasad. All rights reserved.</p>
+          <p className="text-neutral-400 text-sm sm:text-base">© 2026 Amrath Prasad. All rights reserved.</p>
         </div>
       </footer>
     </div>

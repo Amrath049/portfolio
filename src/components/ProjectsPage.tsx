@@ -49,27 +49,27 @@ export default function ProjectsPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      
+
       <div className="pt-20 sm:pt-24 pb-12 sm:pb-16 bg-neutral-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <Link 
+          <Link
             to="/"
             className="inline-flex items-center gap-2 text-neutral-600 hover:text-neutral-900 transition-colors mb-6 sm:mb-8 text-sm sm:text-base"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Home
           </Link>
-          
+
           <div className="space-y-3 sm:space-y-4">
             <h1 className="text-neutral-900 tracking-tight">Projects</h1>
             <p className="text-neutral-600 max-w-2xl text-sm sm:text-base text-justify sm:text-left">
-              A collection of backend systems and applications I've built, focusing on scalability, 
+              A collection of backend systems and applications I've built, focusing on scalability,
               performance, and maintainable architecture.
             </p>
           </div>
         </div>
       </div>
-      
+
       <div className="py-12 sm:py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-12 sm:space-y-16">
           {projects.map((project, index) => (
@@ -82,7 +82,7 @@ export default function ProjectsPage() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="p-4 sm:p-6 md:p-8 space-y-6 sm:space-y-8">
                 <div>
                   <h3 className="text-neutral-900 mb-3">Overview</h3>
@@ -90,7 +90,7 @@ export default function ProjectsPage() {
                     {project.description}
                   </p>
                 </div>
-                
+
                 <div>
                   <h3 className="text-neutral-900 mb-3">Key Features</h3>
                   <ul className="space-y-2">
@@ -102,12 +102,12 @@ export default function ProjectsPage() {
                     ))}
                   </ul>
                 </div>
-                
+
                 <div>
                   <h3 className="text-neutral-900 mb-3">Technologies Used</h3>
                   <div className="flex flex-wrap gap-2">
                     {project.techStack.map((tech, i) => (
-                      <span 
+                      <span
                         key={i}
                         className="px-3 sm:px-4 py-1.5 sm:py-2 bg-neutral-50 text-neutral-700 rounded-xl border border-neutral-200 text-xs sm:text-sm"
                       >
@@ -116,7 +116,7 @@ export default function ProjectsPage() {
                     ))}
                   </div>
                 </div>
-                
+
                 <div>
                   <h3 className="text-neutral-900 mb-3">My Responsibilities</h3>
                   <ul className="space-y-2">
@@ -133,10 +133,10 @@ export default function ProjectsPage() {
           ))}
         </div>
       </div>
-      
+
       <footer className="bg-neutral-900 text-white py-6 sm:py-8">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
-          <p className="text-neutral-400 text-sm sm:text-base">© 2025 Amrath Prasad. All rights reserved.</p>
+          <p className="text-neutral-400 text-sm sm:text-base">© 2026 Amrath Prasad. All rights reserved.</p>
         </div>
       </footer>
     </div>
