@@ -6,7 +6,7 @@ import ContactPage from './components/ContactPage';
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/portfolio">
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
