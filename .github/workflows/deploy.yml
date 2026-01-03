@@ -3,8 +3,8 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
-  workflow_dispatch:
+      - main  # Change this to 'master' if your default branch is master
+  workflow_dispatch:  # Allows manual deployment from Actions tab
 
 permissions:
   contents: read
@@ -34,13 +34,10 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './build'
+          path: ./dist
 
   deploy:
     environment:
