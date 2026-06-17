@@ -1,40 +1,51 @@
-import { Code2, GraduationCap, Briefcase } from 'lucide-react';
+import { profile, stats } from "../data";
+import { Reveal } from "./ui-bits";
 
 export default function About() {
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <h2 className="text-neutral-900 mb-12 sm:mb-16 text-center tracking-tight">About Me</h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-          <div className="border border-neutral-200 rounded-2xl p-6 sm:p-8 space-y-4 hover:border-neutral-300 transition-colors">
-            <div className="w-12 h-12 rounded-xl bg-neutral-50 flex items-center justify-center">
-              <Briefcase className="w-5 h-5 text-neutral-700" />
-            </div>
-            <h3 className="text-neutral-900">Experience</h3>
-            <p className="text-neutral-600 text-sm sm:text-base text-justify">
-              ~2 years of professional experience building enterprise-grade backend systems and microservices architectures.
+    <section id="about" className="border-t border-border py-20 sm:py-28">
+      <div className="mx-auto max-w-5xl px-5 sm:px-6">
+        <div className="grid gap-12 md:grid-cols-[1fr_1.3fr] md:gap-16">
+          <Reveal>
+            <p className="eyebrow mb-3 flex items-center gap-3">
+              <span className="inline-block h-px w-8 bg-border-strong" />
+              About
             </p>
-          </div>
-          
-          <div className="border border-neutral-200 rounded-2xl p-6 sm:p-8 space-y-4 hover:border-neutral-300 transition-colors">
-            <div className="w-12 h-12 rounded-xl bg-neutral-50 flex items-center justify-center">
-              <GraduationCap className="w-5 h-5 text-neutral-700" />
-            </div>
-            <h3 className="text-neutral-900">Education</h3>
-            <p className="text-neutral-600 text-sm sm:text-base text-justify">
-              Computer Science background with strong foundation in algorithms, data structures, and software engineering principles.
-            </p>
-          </div>
-          
-          <div className="border border-neutral-200 rounded-2xl p-6 sm:p-8 space-y-4 hover:border-neutral-300 transition-colors">
-            <div className="w-12 h-12 rounded-xl bg-neutral-50 flex items-center justify-center">
-              <Code2 className="w-5 h-5 text-neutral-700" />
-            </div>
-            <h3 className="text-neutral-900">Expertise</h3>
-            <p className="text-neutral-600 text-sm sm:text-base text-justify">
-              Specialized in RESTful API development, database design, third-party integrations, and scalable system architecture.
-            </p>
+            <h2 className="text-3xl text-foreground sm:text-4xl">
+              Backend, done deliberately.
+            </h2>
+          </Reveal>
+
+          <div>
+            <Reveal>
+              <p className="text-lg leading-relaxed text-foreground sm:text-xl">
+                {profile.intro}
+              </p>
+            </Reveal>
+
+            <Reveal delay={120}>
+              <p className="mt-5 leading-relaxed text-muted-foreground text-[15px] sm:text-base">
+                I care about the parts users never see: predictable APIs, sane data
+                models, and services that fail gracefully. My focus is backend
+                architecture, service reliability, and helping teams ship with
+                confidence.
+              </p>
+            </Reveal>
+
+            <Reveal delay={200}>
+              <dl className="mt-10 grid grid-cols-3 gap-6 border-t border-border pt-8">
+                {stats.map((s) => (
+                  <div key={s.label}>
+                    <dt className="font-serif text-2xl text-foreground sm:text-3xl">
+                      {s.value}
+                    </dt>
+                    <dd className="mt-1 text-xs text-muted-foreground sm:text-sm">
+                      {s.label}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </Reveal>
           </div>
         </div>
       </div>

@@ -1,72 +1,62 @@
-import { Mail, Github, Linkedin, ArrowLeft } from "lucide-react";
-import { Link } from 'react-router-dom';
+import { Github, Linkedin, Mail, ArrowUpRight } from "lucide-react";
+import { profile } from "../data";
+import { Reveal } from "./ui-bits";
 
-export default function Contact({ showBackButton = false }: { showBackButton?: boolean }) {
+export default function Contact() {
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        {showBackButton && (
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-neutral-600 hover:text-neutral-900 transition-colors mb-8 text-sm sm:text-base"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back to Home
-          </Link>
-        )}
-
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-neutral-900 mb-4 tracking-tight">
-            Get In Touch
+    <section id="contact" className="border-t border-border bg-surface py-20 sm:py-28">
+      <div className="mx-auto max-w-5xl px-5 sm:px-6">
+        <Reveal className="mx-auto max-w-2xl text-center">
+          <p className="eyebrow mb-3">Get in touch</p>
+          <h2 className="text-3xl text-foreground sm:text-4xl lg:text-5xl">
+            Let's build something solid.
           </h2>
-          <p className="text-neutral-600 text-sm sm:text-base">
-            Let's connect and discuss opportunities
+          <p className="mx-auto mt-4 max-w-md leading-relaxed text-muted-foreground text-[15px] sm:text-base">
+            I'm open to backend roles and interesting problems. Have something in
+            mind, or just want to say hi? My inbox is open.
           </p>
-        </div>
 
-        <div className="max-w-2xl mx-auto">
-          <div className="border border-neutral-200 rounded-2xl p-6 sm:p-8 space-y-6 bg-neutral-50">
-            <div className="flex items-center gap-4 flex-col sm:flex-row text-center sm:text-left">
-              <div className="w-12 h-12 rounded-xl bg-white border border-neutral-200 flex items-center justify-center flex-shrink-0">
-                <Mail className="w-5 h-5 text-neutral-700" />
-              </div>
-              <div>
-                <p className="text-neutral-500 text-sm sm:text-base">Email</p>
-                <a
-                  href="mailto:amrathprasadpc@gmail.com"
-                  className="text-neutral-900 hover:text-neutral-600 transition-colors text-sm sm:text-base break-all"
-                >
-                  amrathprasadpc@gmail.com
-                </a>
-              </div>
-            </div>
+          <a
+            href={`mailto:${profile.email}`}
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-transform hover:-translate-y-0.5"
+          >
+            <Mail className="h-4 w-4" />
+            {profile.email}
+          </a>
 
-            <div className="border-t border-neutral-200 pt-6">
-              <p className="text-neutral-500 mb-4 text-center sm:text-left text-sm sm:text-base">
-                Connect with me
-              </p>
-              <div className="flex gap-4 justify-center sm:justify-start">
-                <a
-                  href="https://github.com/Amrath049"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-xl bg-white border border-neutral-200 flex items-center justify-center hover:border-neutral-300 hover:bg-neutral-900 hover:text-white transition-all group"
-                >
-                  <Github className="w-5 h-5" />
-                </a>
-                <a
-                  href="www.linkedin.com/in/amrath-prasad-99234a209"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-xl bg-white border border-neutral-200 flex items-center justify-center hover:border-neutral-300 hover:bg-neutral-900 hover:text-white transition-all group"
-                >
-                  <Linkedin className="w-5 h-5" />
-                </a>
-              </div>
-            </div>
+          <div className="mt-8 flex items-center justify-center gap-3">
+            <SocialLink href={profile.socials.github} label="GitHub">
+              <Github className="h-[18px] w-[18px]" />
+            </SocialLink>
+            <SocialLink href={profile.socials.linkedin} label="LinkedIn">
+              <Linkedin className="h-[18px] w-[18px]" />
+            </SocialLink>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
+  );
+}
+
+function SocialLink({
+  href,
+  label,
+  children,
+}: {
+  href: string;
+  label: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm text-foreground transition-colors hover:border-border-strong hover:bg-background"
+    >
+      {children}
+      {label}
+      <ArrowUpRight className="h-3.5 w-3.5 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+    </a>
   );
 }

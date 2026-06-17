@@ -1,53 +1,67 @@
-import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { Briefcase } from "lucide-react";
+import { experience } from "../data";
+import { Reveal, SectionHeader } from "./ui-bits";
 
 export default function Experience() {
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-neutral-900 mb-4 tracking-tight">Experience</h2>
-          <p className="text-neutral-600 text-sm sm:text-base">Professional journey and growth</p>
-        </div>
-        
-        <div className="max-w-3xl mx-auto">
-          <div className="relative border-l-2 border-neutral-200 pl-6 sm:pl-8 pb-12 ml-4">
-            <div className="absolute left-0 top-0 w-4 h-4 bg-neutral-900 rounded-full transform -translate-x-[9px]"></div>
-            
-            <div className="space-y-4">
-              <div className="flex items-start justify-between flex-wrap gap-2">
-                <div>
-                  <h3 className="text-neutral-900">Junior Backend Developer</h3>
-                  <p className="text-neutral-600 text-sm sm:text-base">Ordrio Technologies</p>
-                </div>
-                <span className="px-3 py-1 bg-neutral-50 text-neutral-700 rounded-full border border-neutral-200 text-sm">
-                  2023 - Present
-                </span>
-              </div>
-              
-              <p className="text-neutral-600 leading-relaxed text-sm sm:text-base text-justify">
-                Transitioned from internship to full-time role. Architected and developed microservices-based 
-                applications, implemented RESTful APIs, integrated third-party services, and optimized database 
-                queries for improved performance.
-              </p>
-              
-              <div className="flex flex-wrap gap-2 pt-2">
-                <span className="px-3 py-1 bg-neutral-50 text-neutral-700 rounded-full border border-neutral-200 text-sm">Microservices</span>
-                <span className="px-3 py-1 bg-neutral-50 text-neutral-700 rounded-full border border-neutral-200 text-sm">API Design</span>
-                <span className="px-3 py-1 bg-neutral-50 text-neutral-700 rounded-full border border-neutral-200 text-sm">System Architecture</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div className="text-center mt-10 sm:mt-12">
-          <Link 
-            to="/experience"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-neutral-900 text-white rounded-xl hover:bg-neutral-800 transition-colors text-sm sm:text-base"
-          >
-            View Full Experience
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+    <section id="experience" className="border-t border-border bg-surface py-20 sm:py-28">
+      <div className="mx-auto max-w-5xl px-5 sm:px-6">
+        <SectionHeader
+          eyebrow="Experience"
+          title="Where I've grown"
+          description="A few years of focused backend work — building services, designing APIs, and growing into broader architectural ownership."
+        />
+
+        <div className="mt-14 sm:mt-16">
+          <ol className="relative ml-1 border-l border-border-strong">
+            {experience.map((job, i) => (
+              <li key={i} className="relative pb-12 pl-8 last:pb-0 sm:pl-10">
+                {/* node */}
+                <span
+                  className={`absolute -left-[7px] top-1 flex h-3.5 w-3.5 items-center justify-center rounded-full border-2 ${
+                    job.current
+                      ? "border-foreground bg-foreground"
+                      : "border-border-strong bg-background"
+                  }`}
+                  aria-hidden
+                />
+                <Reveal delay={i * 80}>
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                    <h3 className="text-xl text-foreground">{job.title}</h3>
+                    {job.current && (
+                      <span className="rounded-full bg-foreground px-2.5 py-0.5 text-[11px] font-medium uppercase tracking-wide text-background">
+                        Current
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
+                    <span className="inline-flex items-center gap-1.5 text-foreground">
+                      <Briefcase className="h-3.5 w-3.5" />
+                      {job.company}
+                    </span>
+                    <span className="text-border-strong">•</span>
+                    <span>{job.period}</span>
+                    <span className="text-border-strong">•</span>
+                    <span>{job.type}</span>
+                  </div>
+
+                  <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground text-[15px]">
+                    {job.summary}
+                  </p>
+
+                  <ul className="mt-4 grid max-w-2xl gap-2.5 sm:grid-cols-2">
+                    {job.points.map((p, j) => (
+                      <li key={j} className="flex items-start gap-2.5 text-sm text-muted-foreground">
+                        <span className="mt-[7px] h-1 w-1 flex-shrink-0 rounded-full bg-border-strong" />
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
+                </Reveal>
+              </li>
+            ))}
+          </ol>
         </div>
       </div>
     </section>

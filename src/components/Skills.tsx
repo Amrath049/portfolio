@@ -1,39 +1,44 @@
-export default function Skills() {
-  const skills = [
-    'Node.js',
-    'NestJS',
-    'Express.js',
-    'MongoDB',
-    'PostgreSQL',
-    'REST API',
-    'JavaScript',
-    'TypeScript',
-    'Git',
-    'Third-party Integrations',
-    'Docker',
-    'Redis',
-    'RabbitMQ',
-    'Microservices',
-  ];
+import { skills, skillFocus } from "../data";
+import { Reveal, SectionHeader } from "./ui-bits";
 
+export default function Skills() {
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-neutral-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-neutral-900 mb-4 tracking-tight">Skills & Technologies</h2>
-          <p className="text-neutral-600 text-sm sm:text-base">Tools and frameworks I work with</p>
+    <section id="skills" className="border-t border-border bg-surface py-20 sm:py-28">
+      <div className="mx-auto max-w-5xl px-5 sm:px-6">
+        <SectionHeader
+          eyebrow="Toolbox"
+          title="Skills & technologies"
+          description="The stack I reach for when designing and building backend systems."
+        />
+
+        <div className="mt-12 grid grid-cols-2 gap-3 sm:mt-16 sm:grid-cols-3 lg:grid-cols-4">
+          {skills.map((skill, i) => {
+            const { Icon } = skill;
+            return (
+              <Reveal key={skill.name} delay={(i % 4) * 60}>
+                <div className="group flex items-center gap-3 rounded-xl border border-border bg-background px-4 py-3.5 transition-all duration-300 hover:-translate-y-0.5 hover:border-border-strong">
+                  <Icon
+                    className="h-5 w-5 flex-shrink-0 text-muted-foreground transition-colors group-hover:text-foreground"
+                    aria-hidden
+                  />
+                  <span className="text-sm text-foreground">{skill.name}</span>
+                </div>
+              </Reveal>
+            );
+          })}
         </div>
-        
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 max-w-4xl mx-auto">
-          {skills.map((skill, index) => (
-            <span 
-              key={index}
-              className="px-4 sm:px-5 py-2 sm:py-2.5 bg-white text-neutral-800 rounded-xl border border-neutral-200 hover:border-neutral-300 hover:shadow-sm transition-all text-sm sm:text-base"
-            >
-              {skill}
-            </span>
-          ))}
-        </div>
+
+        <Reveal delay={120}>
+          <div className="mt-8 flex flex-wrap items-center gap-x-2 gap-y-2 text-sm text-muted-foreground">
+            <span className="eyebrow !tracking-[0.18em]">Also</span>
+            {skillFocus.map((item, i) => (
+              <span key={item} className="flex items-center gap-2">
+                {i > 0 && <span className="text-border-strong">·</span>}
+                {item}
+              </span>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );
