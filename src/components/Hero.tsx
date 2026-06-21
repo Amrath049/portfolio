@@ -17,7 +17,7 @@ export default function Hero() {
                   <span className="ping-soft absolute inset-0 rounded-full" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
                 </span>
-                Open to backend opportunities
+                Open to opportunities
               </span>
             )}
 

@@ -1,5 +1,42 @@
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import { useReveal } from "../hooks";
+
+/** Project screenshot with a graceful monochrome fallback when missing. */
+export function ProjectThumb({
+  src,
+  title,
+  className = "",
+}: {
+  src?: string;
+  title: string;
+  className?: string;
+}) {
+  const [failed, setFailed] = useState(false);
+  const resolved = src ? `${import.meta.env.BASE_URL}${src}` : undefined;
+
+  if (!resolved || failed) {
+    return (
+      <div
+        className={`flex items-center justify-center bg-muted ${className}`}
+        aria-hidden
+      >
+        <span className="bg-linear-to-br from-foreground/70 to-foreground bg-clip-text font-serif text-4xl text-transparent">
+          {title.slice(0, 2).toUpperCase()}
+        </span>
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={resolved}
+      alt={`${title} preview`}
+      loading="lazy"
+      onError={() => setFailed(true)}
+      className={className}
+    />
+  );
+}
 
 /** Fades + lifts its children into view on scroll. */
 export function Reveal({

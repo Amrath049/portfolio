@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { navLinks, profile } from "../data";
 import ThemeToggle from "./ThemeToggle";
 
@@ -7,6 +8,9 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState<string>("");
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+  const onHome = pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -15,8 +19,12 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Highlight the section currently in view
+  // Highlight the section currently in view (home only)
   useEffect(() => {
+    if (!onHome) {
+      setActive("");
+      return;
+    }
     const sections = navLinks
       .map((l) => document.getElementById(l.id))
       .filter(Boolean) as HTMLElement[];
@@ -32,11 +40,15 @@ export default function Navbar() {
     );
     sections.forEach((s) => observer.observe(s));
     return () => observer.disconnect();
-  }, []);
+  }, [onHome]);
 
   const go = (id: string) => {
     setOpen(false);
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    if (onHome) {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate(`/#${id}`);
+    }
   };
 
   return (
@@ -49,9 +61,11 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-5 sm:px-6 h-16">
         <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          onClick={() =>
+            onHome ? window.scrollTo({ top: 0, behavior: "smooth" }) : navigate("/")
+          }
           className="group flex items-center gap-2.5"
-          aria-label="Back to top"
+          aria-label="Home"
         >
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-foreground font-serif text-base text-background">
             A
