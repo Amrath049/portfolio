@@ -104,10 +104,25 @@ export const projects: Project[] = [
     featured: true,
     cover: "projects/arenabook-web.png",
     images: [
-      { src: "projects/arenabook-web.png", alt: "ArenaBook player website — find & book arenas" },
-      { src: "projects/arenabook-admin.png", alt: "Arena Pro — admin dashboard" },
+      {
+        src: "projects/arenabook-web.png",
+        alt: "ArenaBook player website — find & book arenas",
+      },
+      {
+        src: "projects/arenabook-admin.png",
+        alt: "Arena Pro — admin dashboard",
+      },
     ],
-    tech: ["NestJS", "TypeScript", "PostgreSQL", "Prisma", "React", "Tailwind", "JWT", "Cashfree"],
+    tech: [
+      "NestJS",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "React",
+      "Tailwind",
+      "JWT",
+      "Cashfree",
+    ],
     overview:
       "ArenaBook is a production-deployed booking platform built from scratch as a pnpm monorepo. Players browse arenas by sport and city, book time slots, and manage an in-app wallet — while arena owners get a separate admin dashboard to configure courts, define slot schedules, track bookings, and view player activity.",
     sections: [
@@ -143,8 +158,97 @@ export const projects: Project[] = [
       },
     ],
     links: [
-      { label: "Live website", href: "https://arena-book-api.vercel.app/", kind: "live" },
-      { label: "Admin panel", href: "https://arena-book-admin.vercel.app/", kind: "admin" },
+      {
+        label: "Live website",
+        href: "https://arena-book-api.vercel.app/",
+        kind: "live",
+      },
+      {
+        label: "Admin panel",
+        href: "https://arena-book-admin.vercel.app/",
+        kind: "admin",
+      },
+    ],
+  },
+  {
+    slug: "localgig",
+    title: "LocalGig",
+    subtitle: "Hyperlocal Job Board Platform",
+    oneLiner:
+      "A hyperlocal job board platform designed to connect local blue-collar workers and small businesses directly.",
+    role: "Full-stack",
+    featured: true,
+    cover: "projects/Local-Gig-home.png",
+    images: [
+      {
+        src: "projects/Local-Gig-home.png",
+        alt: "LocalGig home page and noticeboard feed",
+      },
+      {
+        src: "projects/Local-gig-employer.png",
+        alt: "LocalGig employer dashboard and applicant tracker",
+      },
+      {
+        src: "projects/Localgig-employee.png",
+        alt: "LocalGig worker dashboard and applications",
+      },
+    ],
+    tech: [
+      "NestJS",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "React",
+      "Tailwind",
+      "OpenSearch",
+      "Elasticsearch",
+      "Redis",
+      "JWT",
+      "SendGrid",
+    ],
+    overview:
+      "LocalGig is a hyperlocal job board platform designed to connect local blue-collar workers and small businesses directly. Job seekers can search, filter, and apply to nearby gig, part-time, or full-time opportunities in one tap without middleman fees, while employers get a dedicated dashboard to create job listings, verify posts, manage applicants, and contact hires directly.",
+    sections: [
+      {
+        title: "Worker App",
+        items: [
+          "Community Bulletin Board Feed: Browse nearby jobs styled in a noticeboard aesthetic, with type tags (Gig, Part-time, Full-time), pay ranges, and locations.",
+          "Hyperlocal Quick Search: Instantly filter listings by trade categories (Plumbing, Culinary, Delivery, Security) or popular search keywords.",
+          "One-Tap Applications: Submit applications in a single click with dynamic status tracking (Applied, Shortlisted, Not Selected, Removed) synced to the worker's dashboard.",
+          "Infinite Scroll Pagination: A seamless browsing experience powered by a high-performance, non-blocking IntersectionObserver that automatically appends older listings on scroll.",
+          "Secure Profile Registration: Free registration with email OTP verification and secure password hashing.",
+        ],
+      },
+      {
+        title: "Employer Dashboard",
+        items: [
+          "Job Posting & Management: Post new gigs in plain language, specify exact pay rates, list required skills, and verify business credentials.",
+          "Applicant Pipeline Tracker: Review applicants on a centralized kanban-style feed where employers can mark candidates as seen, shortlist, or decline them.",
+          'Soft-Deletion Listings: Employers can hide or "remove" active listings from the public feed, while keeping them visible in the dashboard of applied workers with a "Removed" notification status.',
+        ],
+      },
+      {
+        title: "Architecture Highlights",
+        items: [
+          "Monorepo Workspace: Clean separation of a modular NestJS API backend and a lightweight Vite React frontend.",
+          "Hybrid Search Strategy: Leverages an OpenSearch/Elasticsearch engine for fuzzy text search with a structured Prisma/PostgreSQL query fallback logic.",
+          "Redis Indexing Queue: Offloads indexing and search index deletion tasks to an asynchronous Redis background worker queue.",
+          "Role-Based JWT Security: Secure route access control with role-based JWT auth tokens and global Axios response interceptors to refresh sessions.",
+          "Tailwind & Noticeboard Aesthetic: A premium user interface design featuring modern typography, warm-toned color palettes, subtle rotations, and fully responsive layouts.",
+        ],
+      },
+    ],
+    links: [
+      {
+        label: "Live website",
+        href: "https://local-gig.vercel.app/",
+        kind: "live",
+      },
+      {
+        label: "Source code",
+        href: "https://github.com/Amrath049/LocalGig",
+        kind: "repo",
+      },
     ],
   },
   {
@@ -157,9 +261,19 @@ export const projects: Project[] = [
     featured: true,
     cover: "projects/resumetailor.png",
     images: [
-      { src: "projects/resumetailor.png", alt: "ResumeTailor — editor with live PDF preview" },
+      {
+        src: "projects/resumetailor.png",
+        alt: "ResumeTailor — editor with live PDF preview",
+      },
     ],
-    tech: ["React 19", "TypeScript", "Vite", "Zustand", "@react-pdf/renderer", "Tailwind"],
+    tech: [
+      "React 19",
+      "TypeScript",
+      "Vite",
+      "Zustand",
+      "@react-pdf/renderer",
+      "Tailwind",
+    ],
     overview:
       "ResumeTailor is an open-source, fully client-side resume builder. It eliminates the repetitive Word-editing cycle job seekers face — tailor your resume to each JD through form-based editing, real-time PDF preview, and a JD Assistant that scores ATS keyword coverage. All data stays in the browser: no backend, no account required.",
     sections: [
@@ -175,8 +289,16 @@ export const projects: Project[] = [
       },
     ],
     links: [
-      { label: "Live demo", href: "https://amrath049.github.io/Personalized-Resume-Builder/", kind: "live" },
-      { label: "Source code", href: "https://github.com/Amrath049/Personalized-Resume-Builder", kind: "repo" },
+      {
+        label: "Live demo",
+        href: "https://amrath049.github.io/Personalized-Resume-Builder/",
+        kind: "live",
+      },
+      {
+        label: "Source code",
+        href: "https://github.com/Amrath049/Personalized-Resume-Builder",
+        kind: "repo",
+      },
     ],
   },
   {
@@ -186,7 +308,7 @@ export const projects: Project[] = [
     oneLiner:
       "An enterprise resource-management platform on a modern microservices architecture, built for high availability and scale.",
     role: "Backend",
-    featured: true,
+    featured: false,
     tech: ["NestJS", "MongoDB", "PostgreSQL", "Redis", "RabbitMQ", "Docker"],
     overview:
       "A comprehensive enterprise resource-management platform built on a modern microservices architecture, designed to handle complex business workflows with high availability and scalability.",

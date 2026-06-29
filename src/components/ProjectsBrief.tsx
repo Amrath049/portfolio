@@ -18,7 +18,7 @@ export default function ProjectsBrief() {
               to="/projects"
               className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
-              All {projects.length} projects
+              All projects
               <ArrowRight className="h-4 w-4" />
             </Link>
           </Reveal>
@@ -67,7 +67,7 @@ export default function ProjectsBrief() {
             to="/projects"
             className="inline-flex items-center gap-2 rounded-full border border-border-strong px-5 py-2.5 text-sm font-medium text-foreground"
           >
-            View all {projects.length} projects
+            View all projects
             <ArrowRight className="h-4 w-4" />
           </Link>
         </Reveal>
