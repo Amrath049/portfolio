@@ -19,8 +19,7 @@ export const profile = {
   focus: "Backend Developer",
   location: "India",
   available: true,
-  tagline:
-    "I build scalable backend systems and clean, reliable APIs.",
+  tagline: "I build scalable backend systems and clean, reliable APIs.",
   intro:
     "Software Engineer with 2+ years of experience designing and shipping enterprise-grade microservices. I specialize in building efficient APIs, modeling data, and turning complex business logic into maintainable systems with modern JavaScript and TypeScript.",
   stack: ["Node.js", "NestJS", "Express", "MongoDB"],
@@ -390,7 +389,7 @@ export const otherProjects: OtherProject[] = [
     subtitle: "Simple Factory Order & Inventory Management System",
     oneLiner:
       "An internal management system built for Siri Enterprises to streamline factory orders, manage customers and products, track inventory, and generate custom invoices.",
-    tech: ["React", "PostgreSQL", "Supabase", "Vercel"],
+    tech: ["NestJS", "React", "PostgreSQL", "Supabase", "Vercel"],
     link: "https://factoryflow.siriienterprises.com",
     cover: "projects/Factory-flow-home.png",
   },
