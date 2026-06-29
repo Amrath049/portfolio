@@ -386,6 +386,15 @@ export const otherProjects: OtherProject[] = [
     cover: "projects/siri-home.png",
   },
   {
+    title: "Factory Flow",
+    subtitle: "Simple Factory Order & Inventory Management System",
+    oneLiner:
+      "An internal management system built for Siri Enterprises to streamline factory orders, manage customers and products, track inventory, and generate custom invoices.",
+    tech: ["React", "PostgreSQL", "Supabase", "Vercel"],
+    link: "https://factoryflow.siriienterprises.com",
+    cover: "projects/Factory-flow-home.png",
+  },
+  {
     title: "AutoPro Service Workshop",
     subtitle: "Multi-Brand Car Service Center",
     oneLiner:
