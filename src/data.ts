@@ -20,7 +20,7 @@ export const profile = {
   location: "India",
   available: true,
   tagline:
-    "I build scalable microservices and robust server-side systems — clean APIs, reliable data layers, and architecture that holds up under load.",
+    "I build scalable backend systems and clean, reliable APIs.",
   intro:
     "Software Engineer with 2+ years of experience designing and shipping enterprise-grade microservices. I specialize in building efficient APIs, modeling data, and turning complex business logic into maintainable systems with modern JavaScript and TypeScript.",
   stack: ["Node.js", "NestJS", "Express", "MongoDB"],
@@ -363,6 +363,36 @@ export const projects: Project[] = [
       },
     ],
     links: [],
+  },
+];
+
+export type OtherProject = {
+  title: string;
+  subtitle: string;
+  oneLiner: string;
+  tech: string[];
+  link: string;
+  cover?: string;
+};
+
+export const otherProjects: OtherProject[] = [
+  {
+    title: "Siri Enterprises",
+    subtitle: "Areca Leaf Plates & Cashew Supplier",
+    oneLiner:
+      "A B2B business website built for an eco-friendly manufacturer, featuring a dynamic product catalog, detailed CEPCI cashew grades breakdown, and contact integration.",
+    tech: ["React", "TypeScript", "Tailwind CSS", "EmailJS"],
+    link: "https://www.siriienterprises.com/",
+    cover: "projects/siri-home.png",
+  },
+  {
+    title: "AutoPro Service Workshop",
+    subtitle: "Multi-Brand Car Service Center",
+    oneLiner:
+      "A responsive local business landing page featuring a comprehensive multi-brand service catalog, interactive booking CTA, and a custom brand marquee.",
+    tech: ["React", "TypeScript", "Vite", "CSS"],
+    link: "https://amrath049.github.io/carservice/",
+    cover: "projects/autopro-home.png",
   },
 ];
 
