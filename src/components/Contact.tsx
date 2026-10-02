@@ -12,7 +12,7 @@ export default function Contact() {
             Let's build something solid.
           </h2>
           <p className="mx-auto mt-4 max-w-md leading-relaxed text-muted-foreground text-[15px] sm:text-base">
-            I'm open to backend roles and interesting problems. Have something in
+            I'm open to backend and fullstack roles and interesting problems. Have something in
             mind, or just want to say hi? My inbox is open.
           </p>
 

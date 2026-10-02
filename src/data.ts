@@ -1,5 +1,6 @@
 import {
   SiNodedotjs,
+  SiReact,
   SiTypescript,
   SiJavascript,
   SiNestjs,
@@ -19,10 +20,12 @@ export const profile = {
   focus: "Backend Developer",
   location: "India",
   available: true,
-  tagline: "I build scalable backend systems and clean, reliable APIs.",
+  tagline:
+    "I build scalable backends, clean APIs, and the React UIs on top of them.",
   intro:
     "Software Engineer with 2+ years of experience designing and shipping enterprise-grade microservices. I specialize in building efficient APIs, modeling data, and turning complex business logic into maintainable systems with modern JavaScript and TypeScript.",
-  stack: ["Node.js", "NestJS", "Express", "MongoDB"],
+  // stack: ["Node.js", "NestJS", "Express", "MongoDB"],
+  stack: ["Node.js", "NestJS", "React", "TypeScript"],
   resumeUrl: "",
   email: "amrathprasadpc@gmail.com",
   socials: {
@@ -46,12 +49,13 @@ export const experience = [
     type: "Full-time",
     current: true,
     summary:
-      "Took on broader ownership of backend architecture for a large SaaS platform — leading API design, improving service reliability, and mentoring on backend best practices.",
+      "Took on broader ownership of backend architecture for a large SaaS platform — leading API design, improving service reliability, and mentoring on backend best practices and started building React frontends too",
     points: [
       "Own design and delivery of microservices using NestJS and Node.js",
       "Drive API standards: versioning, documentation, and consistent error handling",
       "Improve service reliability through caching, query tuning, and observability",
       "Review code and guide junior developers on backend patterns",
+      "Build React dashboards and screens that consume my own APIs",
     ],
   },
   {
@@ -250,6 +254,60 @@ export const projects: Project[] = [
       },
     ],
   },
+  // {
+  //   slug: "drawplan",
+  //   title: "DrawPlan",
+  //   subtitle: "Collaborative Whiteboard & Diagramming Canvas",
+  //   oneLiner:
+  //     "A fast, Excalidraw-inspired virtual whiteboard with hand-drawn sketchy aesthetics, an infinite canvas, zero-latency direct rendering, and full multi-touch support.",
+  //   role: "Full-stack · Personal Project",
+  //   featured: true,
+  //   cover: "projects/drawplan.png",
+  //   images: [
+  //     {
+  //       src: "projects/drawplan.png",
+  //       alt: "DrawPlan — infinite canvas whiteboard and diagramming editor",
+  //     },
+  //   ],
+  //   tech: [
+  //     "React",
+  //     "TypeScript",
+  //     "Vite",
+  //     "HTML5 Canvas",
+  //     "Rough.js",
+  //     "Zustand",
+  //     "NestJS",
+  //     "Prisma",
+  //     "PostgreSQL",
+  //   ],
+  //   overview:
+  //     "DrawPlan is a full-stack, infinite-canvas diagramming and brainstorming platform inspired by Excalidraw. It pairs expressive, sketch-style vector shapes with customizable fills, sloppiness, and stroke parameters. Designed for high performance, DrawPlan features a custom rendering pipeline that bypasses React state batching during active drags and resizes for buttery 60fps interaction, backed by a NestJS and PostgreSQL service for board persistence and authentication.",
+  //   sections: [
+  //     {
+  //       title: "Key features",
+  //       items: [
+  //         "Infinite 2D canvas with smooth zoom (10% to 500%), pan tool, and spacebar dragging",
+  //         "Rich geometric toolkit: rectangles, diamonds, ellipses, lines, directional arrows, freehand pencil drawing, and inline text editing",
+  //         "Rough.js hand-drawn styling with customizable stroke color, fill colors, dash patterns, edge rounding, sloppiness, and opacity",
+  //         "Zero-latency canvas engine: direct mutable-ref rendering during drag and resize bypasses React re-render lag, batch-committing to Zustand on release",
+  //         "Full touch screen & mobile support: unified Pointer Events with multi-touch pinch-to-zoom and two-finger pan",
+  //         "Cloud board management: JWT authentication, auto-save with dirty indicators, undo/redo history stacks, and single-click PNG / JSON export",
+  //       ],
+  //     },
+  //   ],
+  //   links: [
+  //     {
+  //       label: "Live demo",
+  //       href: "https://drawplan.vercel.app", // replace with your deployed frontend URL
+  //       kind: "live",
+  //     },
+  //     {
+  //       label: "Source code",
+  //       href: "https://github.com/Amrath049/drawPlan",
+  //       kind: "repo",
+  //     },
+  //   ],
+  // },
   {
     slug: "resumetailor",
     title: "ResumeTailor",
@@ -390,7 +448,7 @@ export const otherProjects: OtherProject[] = [
     oneLiner:
       "An internal management system built for Siri Enterprises to streamline factory orders, manage customers and products, track inventory, and generate custom invoices.",
     tech: ["NestJS", "React", "PostgreSQL", "Supabase", "Vercel"],
-    link: "https://factoryflow.siriienterprises.com",
+    link: "https://factory-flow.siriienterprises.com",
     cover: "projects/Factory-flow-home.png",
   },
   {
@@ -411,6 +469,7 @@ export const getProject = (slug?: string) =>
 // Technologies shown as real brand logos in the Skills grid
 export const skills = [
   { name: "Node.js", Icon: SiNodedotjs },
+  { name: "React", Icon: SiReact },
   { name: "TypeScript", Icon: SiTypescript },
   { name: "JavaScript", Icon: SiJavascript },
   { name: "NestJS", Icon: SiNestjs },
@@ -419,7 +478,7 @@ export const skills = [
   { name: "PostgreSQL", Icon: SiPostgresql },
   { name: "Redis", Icon: SiRedis },
   { name: "RabbitMQ", Icon: SiRabbitmq },
-  { name: "Docker", Icon: SiDocker },
+  // { name: "Docker", Icon: SiDocker },
   { name: "Git", Icon: SiGit },
   { name: "REST APIs", Icon: SiOpenapiinitiative },
 ];
@@ -456,7 +515,7 @@ export const certifications = [
     issuer: "Udemy",
     date: "2024",
     credentialId: "UC-508e2e38-1855-4f45-a3f0-f953f3aa76a8",
-    skills: ["JavaScript", "Node.js", "Express.js", "MongoDB", "Git"],
+    skills: ["JavaScript", "Node.js", "React", "Express.js", "MongoDB", "Git"],
     url: "https://www.udemy.com/certificate/UC-508e2e38-1855-4f45-a3f0-f953f3aa76a8/",
   },
 ];

@@ -24,7 +24,8 @@ export default function Hero() {
             <h1 className="text-4xl leading-[1.05] tracking-tight text-foreground sm:text-5xl lg:text-6xl">
               Hi, I'm {profile.name.split(" ")[0]}.
               <span className="block text-muted-foreground">
-                I engineer the backend.
+                {/* I engineer the backend And ship the frontend */}
+                Backend-focused fullstack dev
               </span>
             </h1>
 
