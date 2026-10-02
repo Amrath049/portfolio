@@ -1,5 +1,4 @@
-
-  # Developer Portfolio Website Design
+  <!-- # Developer Portfolio Website Design
 
   This is a code bundle for Developer Portfolio Website Design. The original project is available at https://www.figma.com/design/iN08HAOjFIzPucZ0WZgejv/Developer-Portfolio-Website-Design.
 
@@ -7,5 +6,4 @@
 
   Run `npm i` to install the dependencies.
 
-  Run `npm run dev` to start the development server.
-  
+  Run `npm run dev` to start the development server. -->
